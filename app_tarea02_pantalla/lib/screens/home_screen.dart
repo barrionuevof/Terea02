@@ -4,10 +4,10 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
   List data = [
-    Colors.blue,
-    Colors.red,
-    Colors.purple,
-    Colors.orange,
+    const Color.fromRGBO(116, 185, 242, 1.0),
+    const Color.fromRGBO(243, 83, 83, 1.0),
+    const Color.fromRGBO(179, 116, 246, 1.0),
+    const Color.fromRGBO(253, 187, 100, 1.0),
   ];
   List lista1 = ["Progress", "Arena score", "Ranking", "Fowollowing"];
   List lista2 = ["43", "77", "1239", "10"];
@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xf9f9f9f9),
+      backgroundColor: const Color(0xf9f9f9f9),
       //appBar: AppBar(),
       body: Container(
         decoration: const BoxDecoration(
@@ -58,10 +58,21 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: [
                   const SizedBox(width: 20),
-                  const CircleAvatar(
-                    radius: 33.0,
-                    backgroundImage: NetworkImage(
-                        "https://i.pinimg.com/564x/af/db/86/afdb86ee4f4ea150d8f77ecfb4a6da8b.jpg"),
+                  Container(
+                    width: 80,
+                    height: 80,
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(253, 191, 111, 1.0),
+                      borderRadius: BorderRadius.circular(40.0),
+                    ),
+                    child: const CircleAvatar(
+                      //Border.all(color: Colors.white),
+                      //foregroundColor: Colors.orange,
+                      //radius: 40.0,
+                      backgroundImage: NetworkImage(
+                          "https://i.pinimg.com/564x/af/db/86/afdb86ee4f4ea150d8f77ecfb4a6da8b.jpg"),
+                    ),
                   ),
                   const SizedBox(width: 10),
                   Column(
@@ -81,8 +92,10 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Row(
                         children: const [
-                          Icon(Icons.star, color: Colors.orange),
-                          Icon(Icons.star, color: Colors.orange),
+                          Icon(Icons.star,
+                              color: Color.fromRGBO(253, 191, 111, 1.0)),
+                          Icon(Icons.star,
+                              color: Color.fromRGBO(253, 191, 111, 1.0)),
                           Icon(Icons.star, color: Colors.grey),
                           Icon(Icons.star, color: Colors.grey),
                         ],
@@ -92,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(width: 100),
                   Container(
                     padding: const EdgeInsets.all(15.0),
-                    color: Colors.green,
+                    color: const Color.fromRGBO(65, 198, 141, 1.0),
                     child: Row(
                       children: const [
                         Text(
@@ -127,7 +140,7 @@ class HomeScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(13.0),
                     decoration: const BoxDecoration(
-                      color: Colors.green,
+                      color: Color.fromRGBO(65, 198, 141, 1.0),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(30),
                         topRight: Radius.circular(30),
@@ -161,7 +174,7 @@ class HomeScreen extends StatelessWidget {
               margin: const EdgeInsets.only(
                   left: 12, right: 12, top: 12, bottom: 12),
               decoration: BoxDecoration(
-                color: Colors.green,
+                color: const Color.fromRGBO(65, 198, 141, 1.0),
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: Padding(
@@ -282,15 +295,17 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                padding: const EdgeInsets.all(20.0),
-                                decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(5),
-                                      topRight: Radius.circular(10),
-                                      bottomLeft: Radius.circular(20),
-                                      bottomRight: Radius.circular(10),
-                                    ),
-                                    color: Color.fromRGBO(255, 255, 255, 0.38)),
+                                padding: const EdgeInsets.all(10.0),
+                                decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(5),
+                                    topRight: Radius.circular(10),
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(10),
+                                  ),
+                                  //color: const Color.fromRGBO(255, 255, 255, 0.38),
+                                  border: Border.all(color: Colors.white),
+                                ),
                                 child: Icon(
                                   listaIconos[index],
                                   color: colorWhite,
@@ -354,7 +369,7 @@ class HomeScreen extends StatelessWidget {
                 Icon(
                   Icons.home_filled,
                   size: 33.0,
-                  color: Colors.green,
+                  color: Color.fromRGBO(65, 198, 141, 1.0),
                 ),
                 Text("Home", style: TextStyle(color: Colors.green)),
               ],
